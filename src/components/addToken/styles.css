@@ -1,0 +1,44 @@
+p {
+  margin: 0;
+  padding: 5px 0px;
+  display: flex;
+}
+
+.token,
+.balance {
+  display: flex;
+  flex-direction: column;
+}
+.token input,
+.balance input {
+  height: 25px;
+}
+.title-token {
+  display: flex;
+  justify-content: space-between;
+}
+.save {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form {
+  width: 330px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  padding: 20px;
+}
+.token , .balance{
+  padding: 5px 0 2px 0;
+  font-size: 12px;
+  font-weight: 600;
+}
+input#token,input#balance{
+  border-radius: 6px;
+
+}
+.css-mki8s-MuiButtonBase-root-MuiButton-root.Mui-disabled {
+  background-color: #aa33b56b!important;
+}

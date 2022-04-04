@@ -1,26 +1,51 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import "./App.css";
+import { } from "react-router-dom";
+import { AddToken } from "./components/addToken";
+import { Home } from "./components/home";
+import { EditToken } from "./components/editToken";
 
-function App() {
+const theme = createTheme({
+  palette: {
+    action: {
+
+      disabled: '#fcfcfc'
+    },
+    primary: {
+      main: "#aa33b5",
+    },
+    secondary: {
+      main: "#646464",
+      light: 'white',
+    }, error: {
+      main: "#920000",
+    }
+  },
+});
+
+const App: React.FunctionComponent = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeProvider theme={theme}>
+      <BrowserRouter>
+       <Routes>
+            <Route path="/edittoken/:id" element={<EditToken />} />
+            <Route path="/addtoken" element={<AddToken />} />
+            <Route path="/" element={<Home />} />
+            
+      
+          
+          
+          
+          
+          </Routes>
+          </BrowserRouter>
+          </ThemeProvider>
     </div>
+
   );
-}
+};
 
 export default App;
